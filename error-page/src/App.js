@@ -8,7 +8,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Redirect
 } from "react-router-dom";
 
 
@@ -22,6 +22,7 @@ export default function App() {
             <Link to="/">Home</Link>
           </li>
           <li>
+           
             <Link to="/about">About</Link>
           </li>
           
@@ -30,14 +31,15 @@ export default function App() {
     
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home /> 
           </Route>
           <Route path="/about">
             <About/>
           </Route>
-          <Route >
+          {/* <Route >
             <Error/>
-          </Route>
+          </Route> */}
+          <Redirect to ="/" />
           
         </Switch>
       </div>
